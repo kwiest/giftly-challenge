@@ -1,0 +1,26 @@
+<div class="search-result">
+  <div class="search-result-image">
+    <img class="img-thumbnail" src="<%= search_result.image_url %>" width="150" />
+  </div>
+
+  <div class="search-result-details">
+    <h5><%= search_result.name %></h5>
+
+    <%= image_tag(search_result.rating_image_path, class: 'search-result-rating') %>
+
+    <div class="search-result-address">
+      <%= search_result.formatted_address %>
+    </div>
+
+    <div class="search-result-distance">
+      <%= search_result.miles_away %>
+    </div>
+
+    <div class="search-result-purchase-link">
+      <%= link_to 'Purchase Giftly gift card',
+        new_gift_card_path(business_id: search_result.business_id) %>
+    </div>
+  </div>
+
+  <div class="clearfix"></div>
+</div>

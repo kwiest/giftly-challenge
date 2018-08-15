@@ -1,0 +1,79 @@
+<div class="body-card body-card-first">
+  <div class="body-card-title">
+    <h1>Give a Giftly gift card.</h1>
+  </div>
+
+  <div id="search-form">
+    <%= form_for :search, url: searches_path do |f| %>
+      <%= f.hidden_field :latitude %>
+      <%= f.hidden_field :longitude %>
+      <%= f.hidden_field :area_name %>
+
+      <div class="form-group">
+        <%= f.label :q, 'Search for a business to gift...' %>
+        <%= f.text_field :q, class: 'form-control' %>
+        <small id="search-location" class="form-text text-muted">Finding current location...</small>
+      </div>
+
+      <%= f.submit 'Please wait...',
+        id: 'search-submit',
+        class: 'btn btn-primary',
+        disabled: true %>
+    <% end %>
+  </div>
+</div>
+
+<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
+<script>
+  var latitudeField = document.getElementById('search_latitude');
+  var longitudeField = document.getElementById('search_longitude');
+  var areaNameField = document.getElementById('search_area_name');
+  var submitButton = document.getElementById('search-submit');
+  var helpText = document.getElementById('search-location');
+  var geocoder = new google.maps.Geocoder();
+
+  if(navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(positionSuccess);
+  } else {
+    helpText.innerHTML = 'Please allow geolocation in order to search';
+  }
+
+  function positionSuccess(position) {
+    latitudeField.value = position.coords.latitude;
+    longitudeField.value = position.coords.longitude;
+
+    getAreaName(position.coords.latitude, position.coords.longitude);
+  }
+
+  function getAreaName(lat, lng) {
+    var latLng = new google.maps.LatLng(lat, lng);
+
+    geocoder.geocode({ 'latLng': latLng }, function(results, status) {
+      if(status == google.maps.GeocoderStatus.OK) {
+        var area = results.filter(function(address) {
+          return address.types.includes('locality');
+        })[0];
+
+        areaSuccess(area.formatted_address);
+      } else {
+        areaFailure();
+      }
+    });
+  }
+
+  function areaSuccess(areaName) {
+    areaNameField.value = areaName;
+    helpText.innerHTML = 'Search businesses near ' + areaName;
+
+    enableSearch();
+  }
+
+  function areaFailure() {
+    enableSearch();
+  }
+
+  function enableSearch() {
+    submitButton.removeAttribute('disabled');
+    submitButton.value = 'Search »';
+  }
+</script>

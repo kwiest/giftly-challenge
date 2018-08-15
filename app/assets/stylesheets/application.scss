@@ -1,9 +1,51 @@
- @import 'bootstrap';
- @import 'colors';
+@import 'bootstrap';
+@import 'colors';
+@import 'forms';
+@import 'search';
 
- body {
-   font-family: museo-sans, "Helvetica Neue", Helvetica, Helvetica, Arial, sans-serif;
-   background: #fff;
-   color: $color-dark-gray;
- }
+body {
+ font-family: 'Roboto', 'Helvetica Neue', Helvetica, Helvetica, Arial, sans-serif;
+ background: $color-body-light-blue;
+ color: $color-text-dark-gray;
+}
 
+#main-nav {
+ background: $color-body-beige !important;
+}
+
+#main-content {
+  position: flex;
+  margin-top: 80px;
+}
+
+a, a:visited {
+  color: $color-button-blue;
+}
+
+a:hover, a:active {
+  color: $color-button-dark-blue;
+}
+
+.body-card {
+  padding: 20px 20px 40px;
+  margin: 5px 0;
+  background: #fff;
+  text-align: center;
+  border-radius: 2px;
+  border: 1px solid rgba(115, 115, 115, 0.4);
+  box-shadow: 0 0 4px rgba(140, 172, 179, 0.4);
+
+  .body-card-title {
+    font-family: 'Roboto Slab', 'Helvetica Neue', Helvetica, Helvetica, Arial, serif;
+    color: rgb(112, 144, 149);
+
+    h1 {
+      font-weight: 300;
+    }
+  }
+}
+
+.body-card-first {
+  margin-top: 120px;
+  border-top: 7px solid rgb(166, 188, 192);
+}

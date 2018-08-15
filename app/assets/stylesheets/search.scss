@@ -1,0 +1,36 @@
+#search-form {
+  margin: 0 auto;
+  max-width: 400px;
+}
+
+.search-result {
+  margin: 20px auto 0;
+  max-width: 400px;
+  text-align: left;
+  padding: 4px;
+  border: 1px solid #dee2e6;
+
+  .search-result-image {
+    width: 160px;
+    @include float-left;
+
+    img {
+      border: none;
+    }
+  }
+
+  .search-result-details {
+    font-size: 0.9rem;
+    width: 230px;
+    @include float-left;
+
+    h5 {
+      margin-top: 2px;
+      font-size: 1.1rem;
+    }
+
+    .search-result-purchase-link {
+      margin-top: 4px;
+    }
+  }
+}

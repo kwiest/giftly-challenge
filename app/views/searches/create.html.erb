@@ -1,0 +1,15 @@
+<% content_for :page_title, 'Business search' %>
+
+<div class="body-card body-card-first">
+  <div class="body-card-title">
+    <h1>Search results for “<%= @search.q %>”</h1>
+    <h2>Near <%= @search.area_name %></h1>
+  </div>
+
+  <h4>Showing <%= pluralize @search.results.size, 'result' %></h4>
+  <div id="search-results">
+    <% @search.results.each do |result| %>
+      <%= render partial: 'search_result', locals: { search_result: result } %>
+    <% end %>
+  </div>
+</div>
