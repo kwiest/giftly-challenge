@@ -63,3 +63,6 @@ group :test do
   gem 'chromedriver-helper'
 end
 
+group :production do
+  gem 'rack-ssl', '~> 1.4', '>= 1.4.1'
+end
