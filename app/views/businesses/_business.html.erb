@@ -1,0 +1,22 @@
+<div class="search-result">
+  <div class="search-result-image">
+    <img class="img-thumbnail" src="<%= business.image_url %>" width="150" />
+  </div>
+
+  <div class="search-result-details">
+    <h5><%= business.name %></h5>
+
+    <%= rating_image_for(business.rating) %>
+
+    <div class="search-result-address">
+      <%= business.address.formatted %>
+    </div>
+
+    <div class="search-result-purchase-link">
+      <%= link_to 'Purchase Giftly gift card',
+        new_gift_card_path(business_id: business.yelp_id) %>
+    </div>
+  </div>
+
+  <div class="clearfix"></div>
+</div>

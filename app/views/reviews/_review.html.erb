@@ -1,0 +1,9 @@
+<div class="review">
+  <div class="review-rating">
+    <%= rating_image_for(review.rating) %>
+  </div>
+  <p class="review-text">
+    <%= review.text %>
+    <%= link_to 'Read more', review.url %>
+  </p>
+</div>

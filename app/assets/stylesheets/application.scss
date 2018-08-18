@@ -1,12 +1,18 @@
 @import 'bootstrap';
+@import 'buttons';
 @import 'colors';
-@import 'forms';
+@import 'business';
+@import 'gift_cards';
 @import 'search';
 
 body {
  font-family: 'Roboto', 'Helvetica Neue', Helvetica, Helvetica, Arial, sans-serif;
  background: $color-body-light-blue;
  color: $color-text-dark-gray;
+}
+
+.container {
+  max-width: 960px;
 }
 
 #main-nav {
@@ -27,20 +33,50 @@ a:hover, a:active {
 }
 
 .body-card {
-  padding: 20px 20px 40px;
-  margin: 5px 0;
+  padding: 40px;
+  margin: 10px 0;
   background: #fff;
   text-align: center;
   border-radius: 2px;
-  border: 1px solid rgba(115, 115, 115, 0.4);
+  border: 1px solid $color-light-gray;
   box-shadow: 0 0 4px rgba(140, 172, 179, 0.4);
 
   .body-card-title {
-    font-family: 'Roboto Slab', 'Helvetica Neue', Helvetica, Helvetica, Arial, serif;
+    margin-bottom: 20px;
     color: rgb(112, 144, 149);
 
     h1 {
+      font-family: 'Roboto Slab', 'Helvetica Neue', Helvetica, Helvetica, Arial, serif;
       font-weight: 300;
+    }
+
+    h2 {
+      font-weight: lighter;
+      font-size: 1.6rem;
+    }
+  }
+
+  .body-card-footer {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    border-top: 1px solid $color-light-gray;
+    margin: 0 -40px -40px;
+    padding: 10px;
+
+    .body-card-footer-column {
+      flex: 1 1 auto;
+      padding: 10px 5px;
+      text-align: center;
+
+      &.first-column {
+        border-right: 1px solid $color-light-gray;
+      }
+
+      &.last-column {
+        border-left: 1px solid $color-light-gray;
+      }
     }
   }
 }

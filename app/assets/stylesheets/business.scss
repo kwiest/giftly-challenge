@@ -1,0 +1,113 @@
+@import 'colors';
+
+.business-name {
+  font-weight: bold;
+  color: $color-text-yellow;
+}
+
+h4 {
+  font-weight: lighter;
+  font-family: 'Roboto Slab', 'Helvetica Neue', Helvetica, Helvetica, Arial, serif;
+}
+
+.business-profile {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding: 20px 0;
+
+  .business-image {
+    padding-right: 20px;
+
+    .image-border-wrap {
+      border-radius: 6px;
+      background: #fff;
+      overflow: hidden;
+      width: 120px;
+
+      img {
+        width: 120px;
+      }
+    }
+  }
+
+  .business-details {
+    .business-rating {
+      vertical-align: baseline;
+      margin-bottom: 10px;
+
+      .business-ratings-description {
+        margin-left: 4px;
+        font-size: 11px;
+      }
+
+      .yelp-logo-small {
+        margin-top: -5px;
+      }
+    }
+  }
+}
+
+.business-extras {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+
+  div {
+    flex: 1 1 auto;
+    padding: 10px 5px;
+
+    h5 {
+      font-size: 16px;
+      font-weight: bold;
+    }
+  }
+
+  .business-price-range {
+    .text-light { color: rgba(115, 115, 115, 0.3) !important; }
+    .text-green { color: rgb(120, 180, 140); }
+  }
+}
+
+#business-map {
+  height: 300px;
+  margin: 20px 0;
+}
+
+.business-reviews {
+  margin: 30px 0;
+
+  h4 {
+    margin-bottom: 20px;
+
+    img.yelp-reviews-logo {
+      margin-top: -14px;
+    }
+  }
+
+  .review {
+    margin: 10px 0;
+    display: flex;
+    flex-direction: row;
+
+    .review-rating {
+      margin-right: 40px;
+      vertical-align: middle;
+    }
+  }
+}
+
+.other-gift-options {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin: 30px 0;
+
+  .other-gift-options-restaurant, .other-gift-options-any, .other-gift-options-movies {
+    flex: 1 1 auto;
+
+    img {
+      display: block;
+    }
+  }
+}

@@ -13,21 +13,7 @@ class SearchResult
     @distance = params['distance']
   end
 
-  def formatted_address
-    "#{address_street}, #{address_city}, #{address_state}"
-  end
-
-  # Yelp returns distance in meters
-  def miles_away
-    miles = distance / 1609.344
-    "#{miles.round(1)} miles away"
-  end
-
-  def rating_image_path
-    if rating % 1 > 0
-      "yelp_stars/small_#{rating.to_i}_half.png"
-    else
-      "yelp_stars/small_#{rating.to_i}.png"
-    end
+  def address
+    @address ||= Address.new(street: address_street, city: address_city, state: address_state)
   end
 end

@@ -6,14 +6,14 @@
   <div class="search-result-details">
     <h5><%= search_result.name %></h5>
 
-    <%= image_tag(search_result.rating_image_path, class: 'search-result-rating') %>
+    <%= rating_image_for(search_result.rating) %>
 
     <div class="search-result-address">
-      <%= search_result.formatted_address %>
+      <%= search_result.address.formatted %>
     </div>
 
     <div class="search-result-distance">
-      <%= search_result.miles_away %>
+      <%= miles_away(search_result.distance) %>
     </div>
 
     <div class="search-result-purchase-link">

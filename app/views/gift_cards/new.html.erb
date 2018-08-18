@@ -1,0 +1,238 @@
+<div class="body-card body-card-first">
+  <div class="body-card-title">
+    <h1>Buy a Gift Card to <%= @gift_card.business.name %></h1>
+  </div>
+
+  <p>
+    Send a personalized cash gift card that is suggested for use at
+    <span class="business-name"><%= @gift_card.business.name %></span>. Any
+    amount up to $1,000. Deliver by email, mail, or print at home.
+  </p>
+  <p>
+    You suggest where to go and what to get - the recipient always gets what
+    they want.
+  </p>
+
+  <p>
+    <%= link_to 'Customize &amp; Buy »'.html_safe, '#', id: 'buy-button', class: 'btn btn-primary' %>
+  </p>
+
+  <p>
+    <%= link_to '#' do %>
+      <%= image_tag 'giftly-guarantee.png' %> 100% satisfaction guaranteed
+    <% end %>
+  </p>
+
+  <div class="body-card-footer">
+    <div class="body-card-footer-column first-column">
+      <%= link_to 'How it works' %>
+    </div>
+    <div class="body-card-footer-column">
+      <%= link_to 'Sample gift' %>
+    </div>
+    <div class="body-card-footer-column last-column">
+      <%= link_to 'Why Giftly' %>
+    </div>
+  </div>
+</div>
+
+<div class="body-card">
+  <div class="body-card-title">
+    <h2>Customizable greeting cards available for every occasion</h2>
+  </div>
+
+  <%= image_tag 'happy-birthday-greeting-card.png' %>
+  <%= image_tag 'enjoy-greeting-card.png' %>
+  <%= image_tag 'congrats-greeting-card.png' %>
+  <%= image_tag 'photo-greeting-card.png' %>
+  <%= image_tag 'love-greeting-card.png' %>
+  <%= image_tag 'happy-birthday-candles-greeting-card.png' %>
+</div>
+
+<div class="body-card text-left">
+  <div class="body-card-title">
+    <h2>About <%= @gift_card.business.name %></h2>
+  </div>
+
+  <div class="business-profile">
+    <div class="business-image">
+      <div class="image-border-wrap">
+        <%= image_tag @gift_card.business.image_url %>
+      </div>
+    </div>
+    <div class="business-details">
+      <h4><%= @gift_card.business.name %></h4>
+      <div class="business-rating">
+        <%= rating_image_for(@gift_card.business.rating) %>
+        <span class="business-ratings-description">
+          Based on <%= @gift_card.business.review_count %> reviews on
+          <%= image_tag 'yelp_logo_small.png', class: 'yelp-logo-small' %>
+      </div>
+      <div class="business-address">
+        <%= @gift_card.business.address.formatted %>
+      </div>
+      <div class="business-phone-number">
+        <%= @gift_card.business.phone_number %>
+      </div>
+    </div>
+  </div>
+
+  <div class="business-extras">
+    <div class="business-categories">
+      <h5>Categories</h5>
+      <%= @gift_card.business.categories.join(', ') %>
+    </div>
+    <div class="business-neighborhood">
+      <h5>Neighborhood</h5>
+      <%= @gift_card.business.neighborhood %>
+    </div>
+    <div class="business-price-range">
+      <h5>Price Range</h5>
+      <%= formatted_price_range(@gift_card.business.price_range) %>
+    </div>
+    <div class="business-cross-streets">
+      <h5>Cross Streets</h5>
+      <%= @gift_card.business.cross_streets %>
+    </div>
+  </div>
+
+  <div id="business-map">
+  </div>
+
+  <div class="business-reviews">
+    <h4>
+      <%= image_tag 'yelp_logo_medium.png', class: 'yelp-reviews-logo' %>
+      reviews for <%= @gift_card.business.name %>
+    </h4>
+    <%= render @gift_card.business.reviews %>
+  </div>
+
+  <div class="body-card-footer">
+    <div class="body-card-footer-column">
+      Is this your business? Take a moment to
+      <%= link_to 'claim this page' %> and customize it for free.
+    </div>
+  </div>
+</div>
+
+<div class="body-card text-left">
+  <div class="body-card-title">
+    <h2>If not <%= @gift_card.business.name %>, they might also enjoy</h2>
+  </div>
+
+  <h5>Browse places similar to <%= @gift_card.business.name %></h5>
+
+  <p>
+    <%= link_to 'Browser similar local businesses' %>
+  </p>
+
+  <h5>Or perhaps,</h5>
+  <div class="other-gift-options">
+    <div class="other-gift-options-restaurant">
+      <%= image_tag 'dinner-at-any-restaurant.png' %>
+      Dinner at any restaurant
+    </div>
+    <div class="other-gift-options-any">
+      <%= image_tag 'anything-at-anyplace.png' %>
+      Anything at any place
+    </div>
+    <div class="other-gift-options-movies">
+      <%= image_tag 'movies-at-any-theater.png' %>
+      Movies at any theater
+    </div>
+  </div>
+
+  <p>
+    <%= link_to 'Browser more gift ideas...' %>
+  </p>
+</div>
+
+<div class="body-card text-left">
+  <div class="body-card-title">
+    <h2>Why buy a gift card using <%= image_tag 'giftly-small-white.png' %>?</h2>
+  </div>
+
+  <p>
+    Giftly makes it easy to send a gift card that's personal, but also flexible
+    and convenient. It's the perfect last minute gift for a birthday, graduation,
+    wedding, holiday, and more.
+  </p>
+
+  <p>
+    Give any amount up to $1,000 and suggest any business, item, or experience
+    you think the recipient will enjoy. Deliver in a customized greeting card or
+    e-greeting card.
+  </p>
+
+  <p>
+    Gifts can be sent electronically by email or text¹ , printed at home, or
+    delivered in the mail.
+  </p>
+
+  <p>
+    Your recipient redeems online and chooses how to receive the money. They can
+    spend their funds at <span class="business-name"><%= @gift_card.business.name %></span>,
+    or elsewhere if they prefer. There is no physical gift certificate to carry
+    around or lose.
+  </p>
+
+  <p>
+    Gift cards sent through Giftly never expire and there are no fees, so
+    recipients can redeem at any time.
+  </p>
+
+  <p>
+    Giftly combines the flexibility and convenience of giving money, but
+    includes a thoughtful suggestion that makes it more personal.
+  </p>
+
+  <p>
+    <%= link_to 'See an example gift »', '#', class: 'btn btn-link', id: 'example-gift-button' %>
+  </p>
+</div>
+
+<div class="body-card text-left">
+  <div class="body-card-title">
+    <h2>Help</h2>
+  </div>
+
+  <p>
+    If you have questions, need help, or want to modify, resend, or cancel a
+    gift, please see our <%= link_to 'Support Center' %>, where you can access an array of self-service tools and our FAQ.
+  </p>
+
+  <p>
+    <%= link_to '#' do %>
+      <%= image_tag 'giftly-guarantee.png' %> 100% satisfaction guaranteed
+    <% end %>
+  </p>
+</div>
+
+<div class="body-card text-left">
+  <div class="body-card-title">
+    <h2>Gift Card Disclosure</h2>
+  </div>
+
+  <p>
+    The Giftly Gift Card is redeemed for money through the Giftly website. It is
+    not accepted by any third-party merchant and is not covered by the CARD Act.
+    Giftly Gift Cards never expire and there are no inactivity fees.  Please see
+    the <%= link_to 'Terms and Conditions' %> for the complete terms.
+  </p>
+</div>
+
+<script type="text/javascript">
+  var map, marker;
+  var coordinates = {
+    lat: <%= @gift_card.business.latitude %>,
+    lng: <%= @gift_card.business.longitude %>
+  };
+
+  function googleInit() {
+    map = new google.maps.Map(document.getElementById('business-map'), {
+      center: coordinates,
+      zoom: 17
+    });
+    marker = new google.maps.Marker({ position: coordinates, map: map });
+  }
+</script>

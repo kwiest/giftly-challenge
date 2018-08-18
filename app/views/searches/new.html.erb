@@ -23,19 +23,29 @@
   </div>
 </div>
 
-<script src="https://maps.googleapis.com/maps/api/js?key=<%= ENV['GCP_API_KEY'] %>" type="text/javascript"></script>
-<script>
+<div class="body-card">
+  <div class="body-card-title">
+    <h1>Browse some of our favorites!</h1>
+  </div>
+
+  <%= render @businesses %>
+</div>
+
+<script type="text/javascript">
   var latitudeField = document.getElementById('search_latitude');
   var longitudeField = document.getElementById('search_longitude');
   var areaNameField = document.getElementById('search_area_name');
   var submitButton = document.getElementById('search-submit');
   var helpText = document.getElementById('search-location');
-  var geocoder = new google.maps.Geocoder();
+  var geocoder;
 
-  if(navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition(positionSuccess);
-  } else {
-    helpText.innerHTML = 'Please allow geolocation in order to search';
+  function googleInit() {
+    geocoder = new google.maps.Geocoder();
+    if(navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(positionSuccess)
+    } else {
+      helpText.innerHTML = 'Please allow geolocation in order to search';
+    }
   }
 
   function positionSuccess(position) {

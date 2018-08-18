@@ -1,12 +1,13 @@
 class SearchesController < ApplicationController
   def new
+    @businesses = Business.all
   end
 
   def create
     @search = Search.new(search_params)
     begin
       @search.perform
-    rescue Search::Error => e
+    rescue YelpApi::Error => e
       flash[:error] = e.message
       render 'new'
     end

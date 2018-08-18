@@ -1,0 +1,30 @@
+@import 'colors';
+
+button, input[type=submit], .btn {
+  font-family: 'Roboto Slab', 'Helvetica Neue', Helvetica, Helvetica, Arial, serif;
+  width: 75%;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.btn-primary {
+  background: $color-button-blue;
+  border-color: $color-button-blue;
+  box-shadow: 1px 2px $color-button-dark-blue;
+}
+
+.btn-primary:hover, .btn-primary:active, .btn-primary:disabled {
+  background: $color-button-dark-blue;
+  border-color: $color-button-dark-blue;
+}
+
+.btn-link, a.btn-link:visited {
+  background: #ebebeb;
+  box-shadow: 1px 2px #d2d2d2;
+  color: $color-button-blue;
+}
+
+.btn-link:hover, .btn-link:active {
+  background: $color-light-gray;
+  color: $color-button-dark-blue;
+}
