@@ -111,3 +111,16 @@ h4 {
     }
   }
 }
+
+#saved-businesses {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+
+  .business {
+    flex: 1 1 auto;
+    padding: 20px;
+  }
+}
