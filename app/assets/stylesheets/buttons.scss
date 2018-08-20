@@ -1,10 +1,14 @@
 @import 'colors';
 
-button, input[type=submit], .btn {
+button, input[type=submit] {
   font-family: 'Roboto Slab', 'Helvetica Neue', Helvetica, Helvetica, Arial, serif;
   width: 75%;
   padding-top: 10px;
   padding-bottom: 10px;
+}
+
+button.navbar-toggler {
+  width: 56px !important;
 }
 
 .btn-primary {
