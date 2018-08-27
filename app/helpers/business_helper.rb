@@ -18,4 +18,12 @@ module BusinessHelper
         content_tag(:span, ' above $61')
     end
   end
+
+  def category_links(categories)
+    links = categories.map do |category|
+      link_to category, '#'
+    end
+
+    safe_join links, ', '
+  end
 end

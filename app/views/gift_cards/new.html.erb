@@ -80,7 +80,7 @@
   <div class="business-extras">
     <div class="business-categories">
       <h5>Categories</h5>
-      <%= @gift_card.business.categories.join(', ') %>
+      <%= category_links @gift_card.business.categories %>
     </div>
     <div class="business-neighborhood">
       <h5>Neighborhood</h5>
