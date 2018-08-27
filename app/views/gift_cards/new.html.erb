@@ -56,8 +56,8 @@
 
   <div class="business-profile">
     <div class="business-image">
-      <div class="image-border-wrap">
-        <%= image_tag @gift_card.business.image_url %>
+      <div class="image-crop">
+        <%= image_tag @gift_card.business.image_url, height: 120, width: 120 %>
       </div>
     </div>
     <div class="business-details">
