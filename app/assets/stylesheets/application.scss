@@ -33,7 +33,7 @@ a:hover, a:active {
 }
 
 .body-card {
-  padding: 40px;
+  padding: 40px 80px;
   margin: 10px 0;
   background: #fff;
   text-align: center;
@@ -62,7 +62,7 @@ a:hover, a:active {
     flex-wrap: wrap;
     align-items: center;
     border-top: 1px solid $color-light-gray;
-    margin: 0 -40px -40px;
+    margin: 0 -80px -40px;
     padding: 10px;
 
     .body-card-footer-column {
