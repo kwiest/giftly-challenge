@@ -3,11 +3,14 @@
 }
 
 #buy-button {
+  display: block;
+  margin: 0 auto;
   max-width: 400px;
 }
 
 #satisfaction-guarantee {
-  margin-top: 20px;
+  margin: 20px 0;
+  text-align: center;
 }
 
 #example-gift-button {
