@@ -142,3 +142,18 @@ h4 {
     padding: 20px;
   }
 }
+
+/* phones */
+@media only screen and (max-width: 767px) {
+  .business-reviews {
+    .review {
+      margin: 10px 0;
+      display: block;
+
+      .review-rating {
+        margin-right: 40px;
+        vertical-align: middle;
+      }
+    }
+  }
+}

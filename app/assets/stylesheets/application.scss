@@ -101,3 +101,27 @@ a:hover, a:active {
 .body-card-first {
   border-top: 7px solid rgb(166, 188, 192);
 }
+
+/* phones */
+@media only screen and (max-width: 767px) {
+  .body-card {
+    padding: 20px 40px;
+
+    .body-card-footer {
+      margin: 0 -40px -20px;
+      display: block;
+
+      .body-card-footer-column {
+        border-bottom: 1px solid $color-light-gray;
+
+        &.first-column {
+          border-right: none;
+        }
+
+        &.last-column {
+          border-left: none;
+        }
+      }
+    }
+  }
+}
