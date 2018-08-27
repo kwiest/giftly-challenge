@@ -13,9 +13,12 @@
   </head>
 
   <body>
-    <div class="container">
-      <%= render 'shared/nav' %>
+    <%= render 'shared/nav' %>
+    <div id="breadcrumb-nav">
+      <%= yield :breadcrumbs %>
+    </div>
 
+    <div class="container">
       <section id="main-content">
         <%= render 'shared/flash_messages' %>
         <%= yield %>

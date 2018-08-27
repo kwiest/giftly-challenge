@@ -19,9 +19,27 @@ body {
  background: $color-body-beige !important;
 }
 
+#breadcrumb-nav {
+  margin-top: 80px;
+  padding: 20px 40px;
+  color: $color-light-gray;
+
+  .breadcrumb-separator {
+    padding: 0 4px;
+  }
+
+  a, a:visited, a:active, a:hover {
+    color: $color-light-gray;
+    text-decoration: none;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
+}
+
 #main-content {
   position: flex;
-  margin-top: 80px;
 }
 
 a, a:visited {
@@ -81,6 +99,5 @@ a:hover, a:active {
 }
 
 .body-card-first {
-  margin-top: 120px;
   border-top: 7px solid rgb(166, 188, 192);
 }
