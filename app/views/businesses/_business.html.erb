@@ -1,6 +1,8 @@
 <div class="business">
-  <div class="business-image">
-    <img class="img-thumbnail" src="<%= business.image_url %>" width="150" />
+  <div class="business-image" style="margin: 0 auto 8px;">
+    <div class="image-crop">
+      <%= image_tag business.image_url, height: 120, width: 120 %>
+    </div>
   </div>
 
   <div class="search-result-details">

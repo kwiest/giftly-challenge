@@ -1,6 +1,8 @@
-<div class="search-result">
-  <div class="search-result-image">
-    <img class="img-thumbnail" src="<%= search_result.image_url %>" width="150" />
+<div class="search-result text-center">
+  <div class="business-image float-left">
+    <div class="image-crop">
+      <%= image_tag search_result.image_url, height: 120, width: 120 %>
+    </div>
   </div>
 
   <div class="search-result-details">
