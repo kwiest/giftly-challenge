@@ -118,9 +118,7 @@
 
   <h5>Browse places similar to <%= @gift_card.business.name %></h5>
 
-  <p>
-    <%= link_to 'Browser similar local businesses' %>
-  </p>
+  <%= similar_business_links(@gift_card.business) %>
 
   <h5>Or perhaps,</h5>
   <div class="other-gift-options">

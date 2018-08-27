@@ -104,6 +104,17 @@ h4 {
   }
 }
 
+#similar-business-links {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin: 20px 0 30px;
+
+  .similar-business-category-link {
+    flex: 1 1 50%;
+  }
+}
+
 .other-gift-options {
   display: flex;
   flex-direction: row;
