@@ -227,7 +227,10 @@
   function googleInit() {
     map = new google.maps.Map(document.getElementById('business-map'), {
       center: coordinates,
-      zoom: 17
+      zoom: 17,
+      disableDefaultUI: true,
+      draggable: false,
+      draggableCursor: 'arrow'
     });
     marker = new google.maps.Marker({ position: coordinates, map: map });
   }
